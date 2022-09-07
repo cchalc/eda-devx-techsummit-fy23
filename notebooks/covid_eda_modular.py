@@ -149,6 +149,13 @@ df.write.mode('overwrite').saveAsTable('covid_stats')
 
 # COMMAND ----------
 
+# quick hack to convert to pandas
+import pyspark.pandas as ps
+
+
+
+# COMMAND ----------
+
 # Using bamboolib output
 import plotly.express as px
 fig = px.line(df.sort_values(by=['date'], ascending=[True]).dropna(subset=['Daily_ICU_occupancy_per_million', 'Weekly_new_hospital_admissions_per_million', 'Daily_ICU_occupancy', 'Weekly_new_hospital_admissions']), x='date', y=['Daily_ICU_occupancy', 'Daily_ICU_occupancy_per_million', 'Daily_hospital_occupancy', 'Daily_hospital_occupancy_per_million', 'Weekly_new_hospital_admissions', 'Weekly_new_hospital_admissions_per_million'], template='plotly_white', title='Hospitalizations: 2020-2022')
