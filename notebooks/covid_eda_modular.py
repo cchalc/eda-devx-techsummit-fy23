@@ -32,7 +32,73 @@ df = index_to_col(df, colname='date')
 # Convert from Pandas to a pyspark sql DataFrame.
 df = spark.createDataFrame(df)
 
-display(pdf)
+display(df)
+
+# COMMAND ----------
+
+# STEP 1: RUN THIS CELL TO INSTALL BAMBOOLIB
+
+# You can also install bamboolib on the cluster. Just talk to your cluster admin for that
+#%pip install bamboolib
+
+# COMMAND ----------
+
+# STEP 2: RUN THIS CELL TO IMPORT AND USE BAMBOOLIB
+
+import bamboolib as bam
+
+# This opens a UI from which you can import your data
+bam  
+
+# Already have a pandas data frame? Just display it!
+# Here's an example
+# import pandas as pd
+# df_test = pd.DataFrame(dict(a=[1,2]))
+# df_test  # <- You will see a green button above the data set if you display it
+
+# COMMAND ----------
+
+# STEP 1: RUN THIS CELL TO INSTALL BAMBOOLIB
+
+# You can also install bamboolib on the cluster. Just talk to your cluster admin for that
+#%pip install bamboolib
+
+# COMMAND ----------
+
+# STEP 2: RUN THIS CELL TO IMPORT AND USE BAMBOOLIB
+
+import bamboolib as bam
+
+# This opens a UI from which you can import your data
+bam  
+
+# Already have a pandas data frame? Just display it!
+# Here's an example
+# import pandas as pd
+# df_test = pd.DataFrame(dict(a=[1,2]))
+# df_test  # <- You will see a green button above the data set if you display it
+
+# COMMAND ----------
+
+# STEP 1: RUN THIS CELL TO INSTALL BAMBOOLIB
+
+# You can also install bamboolib on the cluster. Just talk to your cluster admin for that
+#%pip install bamboolib
+
+# COMMAND ----------
+
+# STEP 2: RUN THIS CELL TO IMPORT AND USE BAMBOOLIB
+
+import bamboolib as bam
+
+# This opens a UI from which you can import your data
+bam  
+
+# Already have a pandas data frame? Just display it!
+# Here's an example
+# import pandas as pd
+# df_test = pd.DataFrame(dict(a=[1,2]))
+# df_test  # <- You will see a green button above the data set if you display it
 
 # COMMAND ----------
 

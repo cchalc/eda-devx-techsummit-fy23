@@ -49,7 +49,17 @@ df
 
 # COMMAND ----------
 
-# Insert and run exported bamboolib transformation code here
+import pandas as pd; import numpy as np
+# Step: Keep rows where entity is one of: Canada
+df = df.loc[df['entity'].isin(['Canada'])]
+
+# Step: Pivot dataframe from long to wide format using the variable column 'indicator' and the value column 'value'
+wide_df = df.set_index(['entity', 'iso_code', 'date', 'indicator'])['value'].unstack(-1).reset_index()
+wide_df.columns.name = ''
+
+# Step: Replace missing values
+wide_df = wide_df.fillna(0)
+
 
 display(wide_df)
 
@@ -75,6 +85,9 @@ wide_df
 # COMMAND ----------
 
 # Insert plotting code here
+import plotly.express as px
+fig = px.line(wide_df.sort_values(by=['date'], ascending=[True]), x='date', y=['Daily ICU occupancy', 'Daily ICU occupancy per million', 'Daily hospital occupancy per million'])
+fig
 
 # COMMAND ----------
 
